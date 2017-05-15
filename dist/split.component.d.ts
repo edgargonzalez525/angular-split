@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, SimpleChanges, EventEmitter, Renderer, OnDestroy, OnChanges } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, EventEmitter, OnChanges, OnDestroy, Renderer, SimpleChanges } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/debounceTime';
@@ -21,6 +21,7 @@ export declare class SplitComponent implements OnChanges, OnDestroy {
     gutterSize: number;
     disabled: boolean;
     visibleTransition: boolean;
+    minPercent: number;
     dragStart: EventEmitter<number[]>;
     dragProgress: EventEmitter<number[]>;
     dragEnd: EventEmitter<number[]>;
@@ -34,7 +35,6 @@ export declare class SplitComponent implements OnChanges, OnDestroy {
     private readonly visibleAreas;
     private readonly nbGutters;
     areas: Array<IAreaData>;
-    private minPercent;
     private isDragging;
     private containerSize;
     private areaASize;
